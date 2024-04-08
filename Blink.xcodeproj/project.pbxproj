@@ -75,6 +75,8 @@
 		803B99E3258381B200DC99C8 /* SettingsHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B99E2258381B200DC99C8 /* SettingsHostingController.swift */; };
 		85A34307200A837A009324F1 /* webfontloader.js in Resources */ = {isa = PBXBuildFile; fileRef = 85A34303200A837A009324F1 /* webfontloader.js */; };
 		85A34309200A8FAF009324F1 /* term.css in Resources */ = {isa = PBXBuildFile; fileRef = 85A34308200A8FAF009324F1 /* term.css */; };
+		926220BF2BC3EFF6001544AA /* libssh2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F64C9525CA99AD00F2225D /* libssh2.xcframework */; };
+		926220C02BC3EFF6001544AA /* libssh2.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D2F64C9525CA99AD00F2225D /* libssh2.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		98271253262E4BDB00F883FA /* FileProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98271252262E4BDB00F883FA /* FileProviderExtension.swift */; };
 		98271257262E4BDB00F883FA /* FileProviderEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98271256262E4BDB00F883FA /* FileProviderEnumerator.swift */; };
 		9827126B262E4BDB00F883FA /* BlinkFileProvider.appex in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = 98271250262E4BDB00F883FA /* BlinkFileProvider.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -191,7 +193,6 @@
 		BDD6D149275951D900E76F1F /* BKGlobalSSHConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6D148275951D900E76F1F /* BKGlobalSSHConfig.swift */; };
 		BDE7125D2A141E3100164F70 /* SSHAgentUserPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7125C2A141E3100164F70 /* SSHAgentUserPrompt.swift */; };
 		BDE7C45C29DCAEFA005E033E /* FileLocationPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7C45B29DCAEFA005E033E /* FileLocationPathTests.swift */; };
-		BDE84C3C2BAE335100457391 /* vim in Resources */ = {isa = PBXBuildFile; fileRef = BDE84C3B2BAE335100457391 /* vim */; };
 		BDE84C512BB233FB00457391 /* bc_ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE84C502BB233F100457391 /* bc_ios.xcframework */; };
 		BDE84C522BB233FB00457391 /* bc_ios.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE84C502BB233F100457391 /* bc_ios.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF471BA268CD17B00A7A41B /* SSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FABB8425C9AEC000E1CC2C /* SSH.framework */; };
@@ -464,7 +465,6 @@
 		D2F330D620A6F4F50074ADD7 /* history.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F330D520A6F4F50074ADD7 /* history.m */; };
 		D2F330DA20A7127B0074ADD7 /* open.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F330D920A7127B0074ADD7 /* open.m */; };
 		D2F64CA925CAA92700F2225D /* curl_ios_static.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E4F92E20B2BB4500B30F7B /* curl_ios_static.framework */; };
-		D2F64CAF25CAAA3300F2225D /* libssh2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F64C9525CA99AD00F2225D /* libssh2.xcframework */; };
 		D2F64CB125CAAAD100F2225D /* ssh_cmd.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2334EC825C1C04700385378 /* ssh_cmd.xcframework */; };
 		D2FBEC0B27CF505D00FD974A /* browse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEC0727CF505D00FD974A /* browse.swift */; };
 		D2FCB4DD2339F9DB00A88108 /* UIScrollView+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB4DC2339F9DB00A88108 /* UIScrollView+Paging.swift */; };
@@ -705,6 +705,7 @@
 				D2334EEF25C1C28F00385378 /* awk.xcframework in Embed Frameworks */,
 				D2A0C2172600D16300F0DF97 /* Protobuf_C_.xcframework in Embed Frameworks */,
 				D2334EF325C1C28F00385378 /* files.xcframework in Embed Frameworks */,
+				926220C02BC3EFF6001544AA /* libssh2.xcframework in Embed Frameworks */,
 				D2334EFB25C1C28F00385378 /* network_ios.xcframework in Embed Frameworks */,
 				07FABBC525C9AECF00E1CC2C /* BlinkFiles.framework in Embed Frameworks */,
 			);
@@ -915,7 +916,6 @@
 		BDD6D148275951D900E76F1F /* BKGlobalSSHConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKGlobalSSHConfig.swift; sourceTree = "<group>"; };
 		BDE7125C2A141E3100164F70 /* SSHAgentUserPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHAgentUserPrompt.swift; sourceTree = "<group>"; };
 		BDE7C45B29DCAEFA005E033E /* FileLocationPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLocationPathTests.swift; sourceTree = "<group>"; };
-		BDE84C3B2BAE335100457391 /* vim */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vim; sourceTree = "<group>"; };
 		BDE84C502BB233F100457391 /* bc_ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = bc_ios.xcframework; path = xcfs/.build/artifacts/xcfs/bc/bc_ios.xcframework; sourceTree = SOURCE_ROOT; };
 		BDE84C762BB33AB800457391 /* xxd.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = xxd.xcframework; path = xcfs/.build/artifacts/xcfs/xxd/xxd.xcframework; sourceTree = SOURCE_ROOT; };
 		BDE84C772BB33AD700457391 /* vim.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = vim.xcframework; path = xcfs/.build/artifacts/xcfs/vim/vim.xcframework; sourceTree = SOURCE_ROOT; };
@@ -1331,6 +1331,7 @@
 				07FABB9925C9AEC100E1CC2C /* SSH.framework in Frameworks */,
 				D222780F2A26217A00D4C708 /* Runestone in Frameworks */,
 				D2334EEE25C1C28F00385378 /* awk.xcframework in Frameworks */,
+				926220BF2BC3EFF6001544AA /* libssh2.xcframework in Frameworks */,
 				BDCB7165268E1577007D7047 /* BlinkConfig.framework in Frameworks */,
 				D2334EF825C1C28F00385378 /* mosh.xcframework in Frameworks */,
 				D218076325CD4FDC00B98902 /* LibSSH.xcframework in Frameworks */,
@@ -1338,7 +1339,6 @@
 				D2A0C2162600D16300F0DF97 /* Protobuf_C_.xcframework in Frameworks */,
 				D2334F0C25C1C3C600385378 /* OpenSSH.xcframework in Frameworks */,
 				D2C7710726EA49AA001B5659 /* openssl.xcframework in Frameworks */,
-				D2F64CAF25CAAA3300F2225D /* libssh2.xcframework in Frameworks */,
 				D222780C2A26216900D4C708 /* TreeSitterBashRunestone in Frameworks */,
 				D2334EF425C1C28F00385378 /* ios_system.xcframework in Frameworks */,
 				07FABBC425C9AECF00E1CC2C /* BlinkFiles.framework in Frameworks */,
@@ -1446,7 +1446,6 @@
 				85A34308200A8FAF009324F1 /* term.css */,
 				D2496F3B20038B3300E75FE9 /* hterm_all.min.js */,
 				D29392B62004D785001FB2AA /* hterm_all.patches.js */,
-				BDE84C3B2BAE335100457391 /* vim */,
 				C94437641D838ABF0096F84E /* Fonts */,
 				C944375F1D831CD30096F84E /* Themes */,
 				0732F04A1D062B9A00AB5438 /* locales.bundle */,
@@ -3070,7 +3069,6 @@
 				0732F04E1D062B9A00AB5438 /* term.html in Resources */,
 				07E3AED11D9191B4007BC086 /* blink.png in Resources */,
 				D21A3FE721943BE200269705 /* dark-app-ipad-76pt@2x.png in Resources */,
-				BDE84C3C2BAE335100457391 /* vim in Resources */,
 				C9B2E02F1D6B612400B89F69 /* Settings.storyboard in Resources */,
 				D2496F3F20038B3300E75FE9 /* hterm_all.min.js in Resources */,
 				D21A3FDB21943BE200269705 /* dark-settings-ipad-29pt@2x.png in Resources */,
@@ -4919,11 +4917,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 869;
+				CURRENT_PROJECT_VERSION = 871;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = A2H2CL32AG;
+				DEVELOPMENT_TEAM = MKS2SH4F8X;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4954,8 +4952,10 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				STRIP_STYLE = "non-global";
 				STRIP_SWIFT_SYMBOLS = NO;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Blink/Blink-bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2,6";
@@ -4971,10 +4971,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 869;
+				CURRENT_PROJECT_VERSION = 871;
 				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = A2H2CL32AG;
+				DEVELOPMENT_TEAM = MKS2SH4F8X;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = Blink/Info.plist;
@@ -5000,8 +5000,10 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_STYLE = "non-global";
 				STRIP_SWIFT_SYMBOLS = NO;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Blink/Blink-bridge.h";
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
