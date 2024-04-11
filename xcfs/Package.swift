@@ -9,8 +9,8 @@ var binaryTargets: [PackageDescription.Target] = [
   ),
   (
     "mosh",
-    "cd92212248429478a0f24346ca48397191409be0c8692b067a13eb9b17e50f27",
-    "https://github.com/blinksh/mosh-apple/releases/download/v1.4.0/mosh.xcframework.zip"
+    "acf9a5aebfb5b05da243d5ec914e22d1022c4edf777aceb7e0a9eb46756cd3fa",
+    "https://github.com/blinksh/mosh-apple/releases/download/v1.4.0+blink-17.3.0/mosh.xcframework.zip"
   ),
   (
     "LibSSH",
@@ -73,18 +73,23 @@ var binaryTargets: [PackageDescription.Target] = [
     "https://github.com/holzschu/network_ios/releases/download/v0.3/network_ios.xcframework.zip"
   ),
   (
+    "curl_ios",
+    "59b437111a5e47039fc900ce207ca0a4b3a7d411cebb576beae3f0631a05922e",
+    "https://github.com/holzschu/ios_system/releases/download/v3.0.3/curl_ios.xcframework.zip"
+  ),
+  (
     "bc",
     "e3d72c562f726614e273efb06f6e63ccd23f9e38b14c468cf9febd4302df5fdd",
     "https://github.com/holzschu/bc/releases/download/v1.0/bc_ios.xcframework.zip"
   ),
   (
     "vim",
-    "782fba9fe318a39c8cebb52ff71efc8cbc3b97ba748a5a60fe11bee6c473b32c",
+    "cfe23a176e932c52ce7cceb4e5ea135ef88d5b3bc7e3b92fa9aaa6e534cf253c",
     "https://github.com/blinksh/vim/releases/download/v9.1.0187/vim.xcframework.zip"
   ),
   (
     "xxd",
-    "eb44e4567287ccd13d98f10f727600e6e806abd968369e96c9b7d700276961c7",
+    "808d0a6404f374bdc21d526856f57a17b1c036d30218f330a0348c9c871ab1fd",
     "https://github.com/blinksh/vim/releases/download/v9.1.0187/xxd.xcframework.zip"
   )
 ].map { name, checksum, url in PackageDescription.Target.binaryTarget(name: name, url: url, checksum: checksum)}

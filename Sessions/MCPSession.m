@@ -82,7 +82,6 @@
 
     NSString *homePath = [BlinkPaths homePath];
     ios_setMiniRoot(homePath);
-    [[NSFileManager defaultManager] changeCurrentDirectoryPath:homePath];
     [self updateAllowedPaths];
 
     // We are restoring mosh session if possible first.
@@ -180,6 +179,13 @@
     return NO;
   }
   
+  // NOTE We don't have a passthrough for all of it.
+  // This should be done at a different function
+  setenv("LC_ALL", "UTF-8", 1);
+  setenv("LC_CTYPE", "UTF-8", 1);
+  setlocale(LC_ALL, "UTF-8");
+  setlocale(LC_CTYPE, "UTF-8");
+  
   if ([cmd isEqualToString:@"mosh"]) {
     [self _runMoshWithArgs:cmdline];
     if (self.sessionParams.hasEncodedState) {
@@ -194,15 +200,12 @@
     [self _runSSHWithArgs:cmdline];
   } else if ([cmd isEqualToString:@"ssh-copy-id"]) {
     [self _runSSHCopyIDWithArgs:cmdline];
-  } else {
+  } else if (![cmd isEqualToString:@""]) {
     // Manually set raw mode for some commands, as we cannot receive control any other way.
+    [_device closeReadline];
     if ([cmd isEqualToString:@"less"] || [cmd isEqualToString:@"vim"]) {
       self.device.rawMode = true;
-      if ([cmd isEqualToString:@"less"]) {
-        // Less needs a different carriage return.
-        // This is part of the control by apps that we need to define manually.
-        self.device.autoCR = TRUE;
-      }
+      self.device.autoCR = TRUE;
     }
     [self setActiveSession];
     _currentCmd = cmdline;
@@ -219,12 +222,18 @@
     _currentCmd = nil;
     ios_waitpid(_pid);
     ios_releaseThreadId(_pid);
-    
+    self.device.autoCR = FALSE;
+
     fclose(tty);
     tty = nil;
     [_cmdStream close];
     _cmdStream = nil;
     _sshClients = [[NSMutableArray alloc] init];
+
+    setenv("LC_ALL", "UTF-8", 1);
+    setenv("LC_CTYPE", "UTF-8", 1);
+    setlocale(LC_ALL, "UTF-8");
+    setlocale(LC_CTYPE, "UTF-8");
   }
   
   [_device prompt:@"blink> " secure:NO shell:YES];
@@ -340,7 +349,7 @@
     return;
   } else if (_childSession) {
     [_childSession kill];
-  } else { 
+  } else if (_cmdStream) {
     [self setActiveSession];
     ios_kill();
   }
@@ -374,6 +383,11 @@
     if ([control isEqualToString:ctrlD]) {
       // We give a chance to the session to capture the new stdin, as it may have changed.
       [self setActiveSession];
+      if (_cmdStream != NULL) {
+        [_cmdStream close];
+        _cmdStream = NULL;
+        _cmdStream = [_device.stream duplicate];
+      }
       ios_setStreams(_cmdStream.in, _cmdStream.out, _cmdStream.out);
       return;
     }
@@ -390,6 +404,7 @@
           [_tokioSignals signalCtrlC];
           _tokioSignals = nil;
         } else {
+          [self setActiveSession];
           ios_kill();
         }
       }
