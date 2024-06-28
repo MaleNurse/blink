@@ -191,12 +191,10 @@
 		BDD6D149275951D900E76F1F /* BKGlobalSSHConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6D148275951D900E76F1F /* BKGlobalSSHConfig.swift */; };
 		BDE7125D2A141E3100164F70 /* SSHAgentUserPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7125C2A141E3100164F70 /* SSHAgentUserPrompt.swift */; };
 		BDE7C45C29DCAEFA005E033E /* FileLocationPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7C45B29DCAEFA005E033E /* FileLocationPathTests.swift */; };
-		BDE84C3C2BAE335100457391 /* vim in Resources */ = {isa = PBXBuildFile; fileRef = BDE84C3B2BAE335100457391 /* vim */; };
 		BDE84C512BB233FB00457391 /* bc_ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE84C502BB233F100457391 /* bc_ios.xcframework */; };
 		BDE84C522BB233FB00457391 /* bc_ios.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE84C502BB233F100457391 /* bc_ios.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF2B8D32BC480CC00B9C7EA /* vim.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE84C772BB33AD700457391 /* vim.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF2B8D52BC480D100B9C7EA /* xxd.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE84C762BB33AB800457391 /* xxd.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BDF2B8D82BC4820F00B9C7EA /* curl_ios.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDF2B8D62BC481F000B9C7EA /* curl_ios.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF2B8DD2BC48D2800B9C7EA /* LibSSH.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2334EC425C1C04700385378 /* LibSSH.xcframework */; };
 		BDF2B8DF2BC48D2D00B9C7EA /* libssh2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F64C9525CA99AD00F2225D /* libssh2.xcframework */; };
 		BDF471BA268CD17B00A7A41B /* SSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FABB8425C9AEC000E1CC2C /* SSH.framework */; };
@@ -687,7 +685,6 @@
 				D2334F0125C1C28F00385378 /* shell.xcframework in Embed Frameworks */,
 				07FABB9A25C9AEC100E1CC2C /* SSH.framework in Embed Frameworks */,
 				BDCB7166268E1577007D7047 /* BlinkConfig.framework in Embed Frameworks */,
-				BDF2B8D82BC4820F00B9C7EA /* curl_ios.xcframework in Embed Frameworks */,
 				D24AFD59222410E700CFD3C1 /* MBProgressHUD.framework in Embed Frameworks */,
 				D2334F0725C1C28F00385378 /* text.xcframework in Embed Frameworks */,
 				BDE84C522BB233FB00457391 /* bc_ios.xcframework in Embed Frameworks */,
@@ -907,7 +904,6 @@
 		BDD6D148275951D900E76F1F /* BKGlobalSSHConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKGlobalSSHConfig.swift; sourceTree = "<group>"; };
 		BDE7125C2A141E3100164F70 /* SSHAgentUserPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHAgentUserPrompt.swift; sourceTree = "<group>"; };
 		BDE7C45B29DCAEFA005E033E /* FileLocationPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLocationPathTests.swift; sourceTree = "<group>"; };
-		BDE84C3B2BAE335100457391 /* vim */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vim; sourceTree = "<group>"; };
 		BDE84C502BB233F100457391 /* bc_ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = bc_ios.xcframework; path = xcfs/.build/artifacts/xcfs/bc/bc_ios.xcframework; sourceTree = SOURCE_ROOT; };
 		BDE84C762BB33AB800457391 /* xxd.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = xxd.xcframework; path = xcfs/.build/artifacts/xcfs/xxd/xxd.xcframework; sourceTree = SOURCE_ROOT; };
 		BDE84C772BB33AD700457391 /* vim.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = vim.xcframework; path = xcfs/.build/artifacts/xcfs/vim/vim.xcframework; sourceTree = SOURCE_ROOT; };
@@ -1431,7 +1427,6 @@
 				85A34308200A8FAF009324F1 /* term.css */,
 				D2496F3B20038B3300E75FE9 /* hterm_all.min.js */,
 				D29392B62004D785001FB2AA /* hterm_all.patches.js */,
-				BDE84C3B2BAE335100457391 /* vim */,
 				C94437641D838ABF0096F84E /* Fonts */,
 				C944375F1D831CD30096F84E /* Themes */,
 				0732F04A1D062B9A00AB5438 /* locales.bundle */,
@@ -3032,7 +3027,6 @@
 				0732F04E1D062B9A00AB5438 /* term.html in Resources */,
 				07E3AED11D9191B4007BC086 /* blink.png in Resources */,
 				D21A3FE721943BE200269705 /* dark-app-ipad-76pt@2x.png in Resources */,
-				BDE84C3C2BAE335100457391 /* vim in Resources */,
 				C9B2E02F1D6B612400B89F69 /* Settings.storyboard in Resources */,
 				D2496F3F20038B3300E75FE9 /* hterm_all.min.js in Resources */,
 				D21A3FDB21943BE200269705 /* dark-settings-ipad-29pt@2x.png in Resources */,
@@ -4879,11 +4873,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 928;
+				CURRENT_PROJECT_VERSION = 930;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = A2H2CL32AG;
+				DEVELOPMENT_TEAM = MKS2SH4F8X;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4931,10 +4925,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 928;
+				CURRENT_PROJECT_VERSION = 930;
 				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = A2H2CL32AG;
+				DEVELOPMENT_TEAM = MKS2SH4F8X;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = Blink/Info.plist;
