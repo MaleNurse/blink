@@ -583,9 +583,11 @@ extension SpaceController: UIPageViewControllerDelegate {
     else {
       return
     }
+    termController.resumeIfNeeded()
     _currentKey = termController.meta.key
     _displayHUD()
     _attachInputToCurrentTerm()
+    
   }
 }
 
@@ -1114,6 +1116,7 @@ extension SpaceController {
 
     _spaceControllerAnimating = true
     _viewportsController.setViewControllers([term], direction: direction, animated: animated) { (didComplete) in
+      term.resumeIfNeeded()
       self._currentKey = term.meta.key
       self._displayHUD()
       self._attachInputToCurrentTerm()

@@ -19,8 +19,8 @@ var binaryTargets: [PackageDescription.Target] = [
   ),
   (
     "OpenSSH",
-    "cf74b2265618df037096dc3c013af84854e901097fc6304a22c1c5a0f781a7d5",
-    "https://github.com/blinksh/openssh-apple/releases/download/v8.6.0/OpenSSH-static.xcframework.zip"
+    "6f6269790435a33c93abbe5ea4e3fe636c3fad6e176332f6f23d6ac9884fdeef",
+    "https://github.com/blinksh/openssh-apple/releases/download/v8.9.0/OpenSSH-static.xcframework.zip"
   ),
   (
     "openssl",
@@ -74,8 +74,8 @@ var binaryTargets: [PackageDescription.Target] = [
   ),
   (
     "curl_ios",
-    "59b437111a5e47039fc900ce207ca0a4b3a7d411cebb576beae3f0631a05922e",
-    "https://github.com/holzschu/ios_system/releases/download/v3.0.3/curl_ios.xcframework.zip"
+    "2d5431b38dc7b06ffec13bf1dda208c670c6ceaa391220d875f681392655fead",
+    "https://github.com/blinksh/ios_system/releases/download/v3.0.3+blink-17.3.0/curl_ios.xcframework.zip"
   ),
   (
     "bc",
@@ -84,13 +84,13 @@ var binaryTargets: [PackageDescription.Target] = [
   ),
   (
     "vim",
-    "cfe23a176e932c52ce7cceb4e5ea135ef88d5b3bc7e3b92fa9aaa6e534cf253c",
-    "https://github.com/blinksh/vim/releases/download/v9.1.0187/vim.xcframework.zip"
+    "81fd7d57cb9cb9549db1f4514dbf93b3c0e67bd5ba8d07ae43735f7916ff8e88",
+    "https://github.com/blinksh/vim/releases/download/v9.1.0187%2Bblink-17.3.0/vim.xcframework.zip"
   ),
   (
     "xxd",
-    "808d0a6404f374bdc21d526856f57a17b1c036d30218f330a0348c9c871ab1fd",
-    "https://github.com/blinksh/vim/releases/download/v9.1.0187/xxd.xcframework.zip"
+    "eb8f86526fae0165b36c08d6eec05d87b48c742f624a3e13b9a885f357ab61e0",
+    "https://github.com/blinksh/vim/releases/download/v9.1.0187%2Bblink-17.3.0/xxd.xcframework.zip"
   )
 ].map { name, checksum, url in PackageDescription.Target.binaryTarget(name: name, url: url, checksum: checksum)}
 
