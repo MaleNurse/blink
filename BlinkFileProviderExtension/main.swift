@@ -2,7 +2,7 @@
 //
 // B L I N K
 //
-// Copyright (C) 2016-2019 Blink Mobile Shell Project
+// Copyright (C) 2016-2024 Blink Mobile Shell Project
 //
 // This file is part of Blink.
 //
@@ -29,35 +29,5 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-import SwiftUI
-import UIKit
-
-
-class SettingsHostingController: UIHostingController<NavView<SettingsView>>, UIAdaptivePresentationControllerDelegate {
-  private let onDismiss: (() -> Void)?
-
-  private init(navController: UINavigationController, onDismiss: (() -> Void)? = nil) {
-    self.onDismiss = onDismiss
-
-    let rootView = NavView(navController: navController) {
-      SettingsView()
-    }
-
-    super.init(rootView: rootView)
-
-    navController.presentationController?.delegate = self
-  }
-
-  @MainActor @objc required dynamic init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
-  // Delegate method called when the modal is dismissed
-  func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-    onDismiss?()
-  }
-
-  static func createSettings(nav: UINavigationController, onDismiss: (() -> Void)? = nil) -> UIViewController {
-    return SettingsHostingController(navController: nav, onDismiss: onDismiss)
-  }
-}
+// This file is intentionally blank. It's needed as an entry point for the file
+// provider extension.

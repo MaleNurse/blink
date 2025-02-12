@@ -32,6 +32,11 @@
 import Foundation
 import Combine
 
+public struct BlinkFilesError: Error, LocalizedError {
+  let errorDescription: String
+  let originalError: Error
+}
+
 public extension Translator {
   func cloneWalkTo(_ path: String) -> AnyPublisher<Translator, Error> {
     let t = self.clone()
@@ -64,11 +69,11 @@ extension Translator {
           return name
         }
         return nil
-      }.flatMap {
-        sourceRootTranslator!.cloneWalkTo($0)
+      }.flatMap { name in
+        sourceRootTranslator!.cloneWalkTo(name).mapError { err in BlinkFilesError(errorDescription: "Could not walk to \(name)", originalError: err)}
       }.eraseToAnyPublisher()
   }
-  
+
   fileprivate func wildcard(_ string: String, pattern: String) -> Bool {
     let pred = NSPredicate(format: "self LIKE %@", pattern)
     return !NSArray(object: string).filtered(using: pred).isEmpty
@@ -88,7 +93,42 @@ extension Translator {
             }
 
             return cloneWalkTo(name)
-              .flatMap { $0.stat() }
+              .flatMap { $0.stat()
+                           .map { attrs in
+                             // Resolve it but make sure the name is still the symlink, otherwise it will be the destination.
+                             var attrs = attrs
+                             attrs[.name] = name
+                             return attrs
+                           }
+              }
+              .catch { _ in Just(attrs) }
+              .eraseToAnyPublisher()
+          }.map { $0 }
+          .collect()
+          .eraseToAnyPublisher()
+      }.eraseToAnyPublisher()
+  }
+
+  public func directoryFilesAndAttributesWithTargetLinks() -> AnyPublisher<[FileAttributes], Error>  {
+    directoryFilesAndAttributes()
+      .flatMap { filesAttributes -> AnyPublisher<[FileAttributes], Never> in
+        filesAttributes.publisher
+          .flatMap { attrs -> AnyPublisher<FileAttributes, Never> in
+            guard let type = attrs[.type] as? FileAttributeType,
+                  let name = attrs[.name] as? String,
+                  type == .typeSymbolicLink else {
+              return .just(attrs)
+            }
+
+            return cloneWalkTo(name)
+              .flatMap {
+                $0.stat()
+                  .map { targetAttrs in
+                    var attrs = attrs
+                    attrs[.symbolicLinkTargetInfo] = targetAttrs
+                    return attrs
+                  }
+              }
               .catch { _ in Just(attrs) }
               .eraseToAnyPublisher()
           }.map { $0 }
